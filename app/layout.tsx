@@ -24,7 +24,10 @@ const description =
   "Інтенсив для тих, хто задовбався вічно прибирати на кухні. 2 дні практики + 5 днів підтримки. Старт 26.10.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  // On Netlify, URL is the site's primary address (set automatically at build time).
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? process.env.URL ?? "http://localhost:3000",
+  ),
   title,
   description,
   openGraph: {
