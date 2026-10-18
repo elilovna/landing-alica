@@ -16,8 +16,8 @@ import review4 from "@/assets/images/review-4.jpg";
 import review5 from "@/assets/images/review-5.jpg";
 
 export const site = {
-  /** TODO: посилання на сторінку оплати — всі кнопки ведуть сюди. */
-  checkoutUrl: "#",
+  /** Посилання на сторінку оплати (Stripe) — всі кнопки ведуть сюди. */
+  checkoutUrl: "https://buy.stripe.com/fZu4gr6lc3eQcsaciwfrW02",
   name: "Alisa Nemytkina",
   /** Контакти — у футері показуються лише заповнені. */
   instagram: "",
