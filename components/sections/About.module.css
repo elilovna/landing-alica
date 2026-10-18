@@ -183,48 +183,43 @@
 
 /* ── «Чому я не можу зробити це сама?» ── */
 .objection {
-  margin-top: clamp(72px, 9vw, 140px);
+  /* Однаковий видимий відступ над і під «Можеш.» */
+  --stamp-gap: clamp(22px, 2.4vw, 34px);
+  margin-top: clamp(100px, 10vw, 150px);
 }
 
 .objectionTitle {
   max-width: 24em;
-  font-size: clamp(28px, 1.8vw + 21px, 48px);
-  line-height: 1.1;
+  font-size: clamp(23px, 1.4vw + 18px, 38px);
+  line-height: 1.15;
 }
 
 .duo {
-  margin-top: clamp(32px, 4vw, 56px);
+  margin-top: var(--stamp-gap);
   display: grid;
   gap: 48px;
 }
 
-.quoteTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.marks {
-  font-family: var(--font-serif), serif;
-  font-size: 90px;
-  line-height: 0.6;
-  color: var(--hib);
-  text-shadow: 4px 3px 0 var(--guava);
+.quote::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .stamp {
-  margin-top: 14px;
   font-size: clamp(40px, 2.6vw + 28px, 64px);
   line-height: 1;
 }
 
+/* Плаває праворуч, текст обтікає — щоб «Можеш.» не губилось у порожнечі */
 .sun {
   position: relative;
-  flex-shrink: 0;
-  width: 160px;
-  height: 160px;
-  margin-right: -6px;
+  float: right;
+  width: 140px;
+  height: 140px;
+  margin: 0 -6px 8px 14px;
+  shape-outside: circle(50%);
+  shape-margin: 6px;
 }
 
 .sunBg,
@@ -240,7 +235,8 @@
 }
 
 .quoteText {
-  margin-top: 22px;
+  /* +3px — на рожеву тінь під «Можеш.» */
+  margin-top: calc(var(--stamp-gap) + 3px);
   font-size: var(--fs-lead);
   line-height: 1.5;
   color: var(--ink-s);
@@ -255,37 +251,26 @@
 .ring {
   position: relative;
   float: left;
-  width: 150px;
+  width: 130px;
   aspect-ratio: 1;
-  margin: 0 10px 4px -8px;
-  shape-outside: circle(50%);
-}
-
-.ring::before {
-  content: "";
-  position: absolute;
-  inset: 12.7%;
+  margin: 0 16px 8px 0;
   border-radius: 50%;
   background: var(--hib);
+  shape-outside: circle(50%);
+  shape-margin: 6px;
 }
 
 .ringPhoto {
   position: absolute;
-  inset: 14.7%;
+  inset: 4px;
   border-radius: 50%;
   overflow: hidden;
   filter: grayscale(1) contrast(1.05);
 }
 
-.ring svg {
-  position: absolute;
-  inset: 0;
-}
-
-.ringText {
-  font-family: var(--font-sans), sans-serif;
-  font-weight: 800;
-  fill: var(--ink);
+.courseTag {
+  margin-right: 0.15em;
+  font-size: 1.15em;
 }
 
 .course p {
@@ -350,8 +335,8 @@
 
 @media (min-width: 640px) {
   .sun {
-    width: 190px;
-    height: 190px;
+    width: 170px;
+    height: 170px;
   }
 
   .fact {
@@ -376,7 +361,7 @@
 @media (min-width: 768px) {
   .course {
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 160px 1fr;
     gap: 24px;
     align-items: center;
   }
@@ -425,12 +410,12 @@
   }
 
   .sun {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
   }
 
   .course {
     margin-top: 40px;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 180px 1fr;
   }
 }

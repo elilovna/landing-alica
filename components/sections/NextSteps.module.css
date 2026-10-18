@@ -62,12 +62,23 @@
   object-position: 62% 22%;
 }
 
+/* Пара вʼєтнамок — ніби хтось іде: права трохи позаду лівої */
+.flipflop,
+.flipflop2 {
+  width: 6.6cqi;
+  height: 13.3cqi;
+}
+
 .flipflop {
   left: 0.5cqi;
   top: 60.2cqi;
-  width: 6.6cqi;
-  height: 13.3cqi;
   transform: rotate(-20deg);
+}
+
+.flipflop2 {
+  left: 8cqi;
+  top: 65.5cqi;
+  transform: rotate(-12deg);
 }
 
 .spark {

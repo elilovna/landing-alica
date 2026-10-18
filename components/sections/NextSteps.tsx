@@ -29,6 +29,7 @@ export function NextSteps() {
             </div>
           </figure>
           <FlipFlop className={cn("deco", styles.flipflop)} />
+          <FlipFlop className={cn("deco", styles.flipflop2)} />
           <Spark className={cn("deco", styles.spark)} />
         </div>
 

@@ -81,28 +81,21 @@ export function About() {
           </h2>
 
           <div className={styles.duo}>
-            <div>
-              <div className={styles.quoteTop}>
-                <div>
-                  <div className={styles.marks} aria-hidden="true">
-                    “
-                  </div>
-                  <p className={cn("script layer", styles.stamp)}>{about.objection.stamp}</p>
-                </div>
-                <div className={styles.sun}>
-                  <div className={styles.sunBg} />
-                  <div className={styles.sunPhoto}>
-                    <Image
-                      src={sunImg}
-                      alt={about.objection.photoAlt}
-                      fill
-                      placeholder="blur"
-                      sizes="(min-width: 1024px) 250px, (min-width: 640px) 190px, 160px"
-                      className={styles.cover}
-                    />
-                  </div>
+            <div className={styles.quote}>
+              <div className={styles.sun}>
+                <div className={styles.sunBg} />
+                <div className={styles.sunPhoto}>
+                  <Image
+                    src={sunImg}
+                    alt={about.objection.photoAlt}
+                    fill
+                    placeholder="blur"
+                    sizes="(min-width: 1024px) 220px, (min-width: 640px) 170px, 140px"
+                    className={styles.cover}
+                  />
                 </div>
               </div>
+              <p className={cn("script layer", styles.stamp)}>{about.objection.stamp}</p>
               <p className={styles.quoteText}>
                 <Rich text={about.objection.answer} />
               </p>
@@ -115,23 +108,13 @@ export function About() {
                     src={faceImg}
                     alt=""
                     fill
-                    sizes="(min-width: 1024px) 140px, 110px"
+                    sizes="(min-width: 1024px) 180px, (min-width: 768px) 160px, 130px"
                     className={styles.cover}
                   />
                 </div>
-                <svg viewBox="0 0 150 150" aria-hidden="true">
-                  <defs>
-                    <path id="ring-course" d="M75 75m-64 0a64 64 0 1 1 128 0" />
-                  </defs>
-                  <text className={styles.ringText} fontSize="17" letterSpacing="1">
-                    <textPath href="#ring-course" startOffset="12%">
-                      {about.objection.ring}
-                    </textPath>
-                  </text>
-                </svg>
               </div>
               <p>
-                <span className="sr-only">{about.objection.ring} </span>
+                <span className={cn("sticker tl", styles.courseTag)}>{about.objection.courseTag}</span>{" "}
                 <Rich text={about.objection.outcome} />
               </p>
             </div>
