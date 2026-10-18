@@ -7,6 +7,7 @@ import { ForWhom } from "@/components/sections/ForWhom";
 import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { NextSteps } from "@/components/sections/NextSteps";
+import { Results } from "@/components/sections/Results";
 import { Reviews } from "@/components/sections/Reviews";
 import { StickyBar } from "@/components/StickyBar";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <ForWhom />
         <About />
         <HowItWorks />
+        <Results />
         <Reviews />
         <Faq />
         <NextSteps />

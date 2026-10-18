@@ -6,6 +6,8 @@
  *   ==текст==  — кольоровий акцент (колір/плашка залежить від блоку)
  */
 
+import beforeAfter1 from "@/assets/images/before-after-1.jpg";
+import beforeAfter2 from "@/assets/images/before-after-2.jpg";
 import review1 from "@/assets/images/review-1.jpg";
 import review2 from "@/assets/images/review-2.jpg";
 import review3 from "@/assets/images/review-3.jpg";
@@ -85,7 +87,7 @@ export const forWhom = {
 };
 
 export const about = {
-  hi: "Привіт, Світ! 🥰 Це я",
+  hi: "Привіт, Світ! Це я",
   name: ["Аліса", "Немиткіна"],
   bio: [
     "З країни чудес, порядку та естетики 😁👌🏻",
@@ -148,6 +150,21 @@ export const how = {
   resultPhotoAlt: "Аліса радісно відкинулась на стільці, ноги на столі",
   offer: "Діє ==спеціальна== пропозиція:",
   cta: "Взяти участь",
+};
+
+export const results = {
+  before: "До",
+  after: "Після",
+  items: [
+    {
+      src: beforeAfter1,
+      alt: "До і після: верхня шафа з продуктами перетворилась на полиці з посудом, а захаращена шухляда — на впорядковану з органайзерами",
+    },
+    {
+      src: beforeAfter2,
+      alt: "До і після: полиці шафи розкладені по кошиках, а крупи пересипані в прозорі контейнери",
+    },
+  ],
 };
 
 export const reviews = {

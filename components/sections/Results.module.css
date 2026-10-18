@@ -1,0 +1,87 @@
+.results {
+  padding-bottom: 0;
+  overflow: clip;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 24px);
+  font-weight: 400;
+}
+
+.before {
+  font-size: clamp(36px, 3vw + 26px, 64px);
+}
+
+.arrow {
+  flex: none;
+  width: clamp(70px, 8vw, 130px);
+  height: auto;
+  color: var(--hib-d);
+  transform: rotate(-8deg) translateY(10px);
+}
+
+.after {
+  font-size: clamp(52px, 4vw + 40px, 104px);
+  transform: rotate(-4deg);
+}
+
+.grid {
+  display: grid;
+  gap: 36px;
+  margin-top: clamp(28px, 4vw, 56px);
+}
+
+.card {
+  position: relative;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 8px 8px 0 var(--hib);
+  transform: rotate(-1.2deg);
+}
+
+.card[data-tilt="right"] {
+  box-shadow: 8px 8px 0 var(--palm);
+  transform: rotate(1.2deg);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.hib {
+  left: -18px;
+  top: -22px;
+  width: 52px;
+  height: 52px;
+  color: var(--hib);
+}
+
+.spark {
+  right: -14px;
+  top: -18px;
+  width: 38px;
+  height: 38px;
+  color: var(--mango);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 4vw, 56px);
+    align-items: start;
+  }
+
+  .card {
+    padding: 10px;
+    box-shadow: 12px 12px 0 var(--hib);
+  }
+
+  .card[data-tilt="right"] {
+    box-shadow: 12px 12px 0 var(--palm);
+    margin-top: 40px;
+  }
+}
