@@ -19,10 +19,10 @@ export const site = {
   /** TODO: посилання на сторінку оплати — всі кнопки ведуть сюди. */
   checkoutUrl: "#",
   name: "Alisa Nemytkina",
-  /** TODO: заповнити контакти — у футері показуються лише заповнені. */
+  /** Контакти — у футері показуються лише заповнені. */
   instagram: "",
   telegram: "",
-  email: "",
+  email: "placeandspace.cph@gmail.com",
 };
 
 export const price = {

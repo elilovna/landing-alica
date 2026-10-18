@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { legalDocs } from "@/content/legal";
+import { legalDocs, seller } from "@/content/legal";
 import { footer, site } from "@/content/landing";
 import { cn } from "@/lib/cn";
 import styles from "./Footer.module.css";
@@ -59,6 +59,8 @@ export function Footer() {
           </nav>
           <p className={styles.copy}>
             © 2026 {site.name}. {footer.rights}
+            <br />
+            {seller.company} · CVR {seller.cvr}
           </p>
         </div>
       </div>

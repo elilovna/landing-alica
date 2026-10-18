@@ -2,7 +2,7 @@
  * Юридичні сторінки: публічна оферта, політика конфіденційності, повернення коштів.
  *
  * [[текст]] — дані, які ще треба вписати. На сайті вони підсвічені жовтим,
- * щоб їх легко було знайти. Заповни `seller` — і підсвітка зникне.
+ * щоб їх легко було знайти.
  *
  * Це шаблон, а не юридична консультація. Перед запуском оплат
  * варто показати тексти юристу або бухгалтеру.
@@ -11,10 +11,10 @@
 import { site } from "./landing";
 
 export const seller = {
-  name: "Аліса Немиткіна",
-  /** Форма бізнесу й номер, напр. "enkeltmandsvirksomhed, CVR 12345678" */
-  registration: "[[форма бізнесу та CVR-номер]]",
-  address: "[[адреса реєстрації бізнесу]]",
+  company: "Place&Space",
+  owner: "Аліса Немиткіна",
+  cvr: "46683935",
+  address: "Delta Park 32, 7. tv, 2665 Vallensbæk Strand",
   country: "Данія",
   email: site.email || "[[e-mail для звернень]]",
 };
@@ -41,7 +41,8 @@ export type LegalDoc = {
 
 const sellerBlock: LegalBlock = {
   list: [
-    `**${seller.name}**, ${seller.registration}`,
+    `**${seller.company}** (${seller.owner})`,
+    `CVR: ${seller.cvr}`,
     `Адреса: ${seller.address}, ${seller.country}`,
     `E-mail: ${seller.email}`,
   ],
