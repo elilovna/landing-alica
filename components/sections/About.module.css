@@ -181,54 +181,28 @@
   color: var(--mango);
 }
 
-/* ── Психологи + хейтери ── */
-/* ── "Я зламала всі правила" — заголовок блоку ── */
-.rules {
+/* ── «Чому я не можу зробити це сама?» ── */
+.objection {
   margin-top: clamp(72px, 9vw, 140px);
-  text-align: center;
-  font-size: clamp(44px, 4vw + 30px, 92px);
+}
+
+.objectionTitle {
+  max-width: 24em;
+  font-size: clamp(28px, 1.8vw + 21px, 48px);
   line-height: 1.1;
-  transform: rotate(-3deg);
-}
-
-.rules > span {
-  display: block;
-}
-
-.rulesLine2 {
-  margin-left: 1.2em;
-}
-
-.ornament {
-  font-family: var(--font-serif), serif;
-  font-size: clamp(18px, 0.6vw + 16px, 24px);
-  letter-spacing: 0.2em;
-  color: var(--mango);
-  text-shadow: none;
-}
-
-.ornament:first-child {
-  margin-bottom: 0.3em;
-}
-
-.ornament:last-child {
-  margin-top: 0.7em;
 }
 
 .duo {
-  margin-top: clamp(48px, 6vw, 88px);
+  margin-top: clamp(32px, 4vw, 56px);
   display: grid;
   gap: 48px;
 }
 
-.quoteHead {
-  font-size: clamp(32px, 2vw + 24px, 52px);
-}
-
-.quote {
-  position: relative;
-  margin-top: 28px;
-  min-height: 180px;
+.quoteTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .marks {
@@ -239,22 +213,18 @@
   text-shadow: 4px 3px 0 var(--guava);
 }
 
-.quote p {
-  position: relative;
-  z-index: 2;
-  max-width: calc(100% - 165px);
-  margin-top: 4px;
-  font-size: var(--fs-lead);
-  line-height: 1.5;
-  color: var(--ink-s);
+.stamp {
+  margin-top: 14px;
+  font-size: clamp(40px, 2.6vw + 28px, 64px);
+  line-height: 1;
 }
 
 .sun {
-  position: absolute;
-  right: -6px;
-  top: 0;
+  position: relative;
+  flex-shrink: 0;
   width: 160px;
   height: 160px;
+  margin-right: -6px;
 }
 
 .sunBg,
@@ -269,7 +239,14 @@
   transform: translate(8px, 8px);
 }
 
-.haters::after {
+.quoteText {
+  margin-top: 22px;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink-s);
+}
+
+.course::after {
   content: "";
   display: block;
   clear: both;
@@ -311,7 +288,7 @@
   fill: var(--ink);
 }
 
-.haters p {
+.course p {
   font-size: var(--fs-body);
   line-height: 1.5;
   color: var(--ink-s);
@@ -377,10 +354,6 @@
     height: 190px;
   }
 
-  .quote {
-    min-height: 210px;
-  }
-
   .fact {
     display: grid;
     grid-template-columns: 112px 1fr;
@@ -398,21 +371,17 @@
     padding: 18px 20px;
     font-size: 16px;
   }
-
-  .quote p {
-    max-width: calc(100% - 210px);
-  }
 }
 
 @media (min-width: 768px) {
-  .haters {
+  .course {
     display: grid;
     grid-template-columns: 180px 1fr;
     gap: 24px;
     align-items: center;
   }
 
-  .haters::after {
+  .course::after {
     content: none;
   }
 
@@ -422,7 +391,7 @@
     margin: 0;
   }
 
-  .haters p {
+  .course p {
     font-size: var(--fs-lead);
   }
 }
@@ -455,20 +424,12 @@
     align-items: start;
   }
 
-  .quote {
-    min-height: 260px;
-  }
-
   .sun {
     width: 250px;
     height: 250px;
   }
 
-  .quote p {
-    max-width: calc(100% - 240px);
-  }
-
-  .haters {
+  .course {
     margin-top: 40px;
     grid-template-columns: 200px 1fr;
   }

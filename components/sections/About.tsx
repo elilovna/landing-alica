@@ -1,7 +1,7 @@
 import Image from "next/image";
 import faceImg from "@/assets/images/about-face.jpg";
 import aboutImg from "@/assets/images/about.jpg";
-import rulesImg from "@/assets/images/rules-face.jpg";
+import sunImg from "@/assets/images/rules-face.jpg";
 import { about } from "@/content/landing";
 import { cn } from "@/lib/cn";
 import { Hibiscus, Spark } from "../ui/Icons";
@@ -75,71 +75,66 @@ export function About() {
           </div>
         </div>
 
-        <h2 className={cn("script layer", styles.rules)}>
-          <span className={styles.ornament} aria-hidden="true">
-            ~ ✦ ~
-          </span>
-          <span>{about.rules[0]}</span>
-          <span className={styles.rulesLine2}>{about.rules[1]}</span>
-          <span className={styles.ornament} aria-hidden="true">
-            ~ ✦ ~
-          </span>
-        </h2>
+        <div className={styles.objection}>
+          <h2 className={cn("serif", styles.objectionTitle)}>
+            <Rich text={about.objection.title} />
+          </h2>
 
-        <div className={styles.duo}>
-          <div>
-            <h3 className={cn("serif", styles.quoteHead)}>
-              <Rich text={about.psychTitle} />
-            </h3>
-            <div className={styles.quote}>
-              <div className={styles.sun}>
-                <div className={styles.sunBg} />
-                <div className={styles.sunPhoto}>
+          <div className={styles.duo}>
+            <div>
+              <div className={styles.quoteTop}>
+                <div>
+                  <div className={styles.marks} aria-hidden="true">
+                    “
+                  </div>
+                  <p className={cn("script layer", styles.stamp)}>{about.objection.stamp}</p>
+                </div>
+                <div className={styles.sun}>
+                  <div className={styles.sunBg} />
+                  <div className={styles.sunPhoto}>
+                    <Image
+                      src={sunImg}
+                      alt={about.objection.photoAlt}
+                      fill
+                      placeholder="blur"
+                      sizes="(min-width: 1024px) 250px, (min-width: 640px) 190px, 160px"
+                      className={styles.cover}
+                    />
+                  </div>
+                </div>
+              </div>
+              <p className={styles.quoteText}>
+                <Rich text={about.objection.answer} />
+              </p>
+            </div>
+
+            <div className={styles.course}>
+              <div className={styles.ring}>
+                <div className={styles.ringPhoto}>
                   <Image
-                    src={rulesImg}
-                    alt={about.psychPhotoAlt}
+                    src={faceImg}
+                    alt=""
                     fill
-                    placeholder="blur"
-                    sizes="(min-width: 1024px) 260px, 190px"
+                    sizes="(min-width: 1024px) 140px, 110px"
                     className={styles.cover}
                   />
                 </div>
-              </div>
-              <div className={styles.marks} aria-hidden="true">
-                “
+                <svg viewBox="0 0 150 150" aria-hidden="true">
+                  <defs>
+                    <path id="ring-course" d="M75 75m-64 0a64 64 0 1 1 128 0" />
+                  </defs>
+                  <text className={styles.ringText} fontSize="17" letterSpacing="1">
+                    <textPath href="#ring-course" startOffset="12%">
+                      {about.objection.ring}
+                    </textPath>
+                  </text>
+                </svg>
               </div>
               <p>
-                <Rich text={about.psychText} />
+                <span className="sr-only">{about.objection.ring} </span>
+                <Rich text={about.objection.outcome} />
               </p>
             </div>
-          </div>
-
-          <div className={styles.haters}>
-            <div className={styles.ring}>
-              <div className={styles.ringPhoto}>
-                <Image
-                  src={faceImg}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 140px, 110px"
-                  className={styles.cover}
-                />
-              </div>
-              <svg viewBox="0 0 150 150" aria-hidden="true">
-                <defs>
-                  <path id="ring-haters" d="M75 75m-64 0a64 64 0 1 1 128 0" />
-                </defs>
-                <text className={styles.ringText} fontSize="17" letterSpacing="1">
-                  <textPath href="#ring-haters" startOffset="8%">
-                    {about.hatersRing}
-                  </textPath>
-                </text>
-              </svg>
-            </div>
-            <p>
-              <span className="sr-only">{about.hatersRing} </span>
-              <Rich text={about.haters} />
-            </p>
           </div>
         </div>
 
