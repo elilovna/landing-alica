@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { site } from "@/content/landing";
 import { cn } from "@/lib/cn";
+import { CheckoutLink } from "./CheckoutLink";
 
 type Props = {
   children: ReactNode;
@@ -11,12 +11,8 @@ type Props = {
 
 export function CtaButton({ children, variant = "hib", id, className }: Props) {
   return (
-    <a
-      id={id}
-      href={site.checkoutUrl}
-      className={cn("btn", variant === "cream" && "btn-cream", className)}
-    >
+    <CheckoutLink id={id} className={cn("btn", variant === "cream" && "btn-cream", className)}>
       {children}
-    </a>
+    </CheckoutLink>
   );
 }

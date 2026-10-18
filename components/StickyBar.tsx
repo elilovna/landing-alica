@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { price, site, spots, stickyBar } from "@/content/landing";
+import { price, spots, stickyBar } from "@/content/landing";
+import { CheckoutLink } from "./ui/CheckoutLink";
 import styles from "./StickyBar.module.css";
 
 /** Плаваюча панель з ціною: зʼявляється після першої кнопки і ховається біля фінального CTA. */
@@ -42,9 +43,7 @@ export function StickyBar() {
           {price.now} {price.currency} <s>{price.was}</s>
         </strong>
       </div>
-      <a href={site.checkoutUrl} className={styles.cta}>
-        {stickyBar.cta}
-      </a>
+      <CheckoutLink className={styles.cta}>{stickyBar.cta}</CheckoutLink>
     </div>
   );
 }

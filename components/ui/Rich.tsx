@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-const TOKEN = /(\*\*[^*]+\*\*|==[^=]+==)/g;
+const TOKEN = /(\*\*[^*]+\*\*|==[^=]+==|\[\[[^\]]+\]\])/g;
 
 type Props = {
   text: string;
@@ -8,7 +8,10 @@ type Props = {
   mark?: "hl" | "hl-bg";
 };
 
-/** Рендерить рядок з контенту, де **жирний** і ==акцент== позначені маркерами. */
+/**
+ * Рендерить рядок з контенту, де **жирний** і ==акцент== позначені маркерами.
+ * [[текст]] — дані, які ще треба заповнити (підсвічуються жовтим).
+ */
 export function Rich({ text, mark = "hl" }: Props) {
   return (
     <>
@@ -19,6 +22,13 @@ export function Rich({ text, mark = "hl" }: Props) {
         if (part.startsWith("==") && part.endsWith("==")) {
           return (
             <mark key={i} className={mark}>
+              {part.slice(2, -2)}
+            </mark>
+          );
+        }
+        if (part.startsWith("[[") && part.endsWith("]]")) {
+          return (
+            <mark key={i} className="todo">
               {part.slice(2, -2)}
             </mark>
           );

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Pacifico, Yeseva_One } from "next/font/google";
+import { ErrorToast } from "@/components/ErrorToast";
 import "./globals.css";
 
 const sans = Manrope({
@@ -50,7 +51,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="uk" className={`${sans.variable} ${script.variable} ${serif.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ErrorToast />
+      </body>
     </html>
   );
 }

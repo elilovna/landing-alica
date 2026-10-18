@@ -356,13 +356,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: 10px 8px;
   font-size: clamp(30px, 2vw + 24px, 48px);
 }
 
 .stickerRow + .stickerRow {
   margin-top: 10px;
-  padding-left: 40px;
 }
 
 .shareText {
