@@ -30,6 +30,14 @@ export function About() {
                 </li>
               ))}
             </ul>
+            <figure className={styles.profile}>
+              <Image
+                src={about.profile.src}
+                alt={about.profile.alt}
+                placeholder="blur"
+                sizes="(min-width: 1024px) 560px, (min-width: 768px) 560px, 92vw"
+              />
+            </figure>
           </div>
 
           <figure className={styles.photo}>
@@ -40,7 +48,7 @@ export function About() {
                 fill
                 placeholder="blur"
                 sizes="(min-width: 1024px) 440px, (min-width: 768px) 420px, 78vw"
-                className={styles.cover}
+                className={cn(styles.cover, styles.photoImg)}
               />
             </div>
             <Hibiscus className={cn("deco", styles.photoHib)} />
@@ -62,17 +70,21 @@ export function About() {
                   </li>
                 ))}
               </ol>
-              <p className={styles.rules}>
-                <span aria-hidden="true">~ ✦ ~</span>
-                {about.rules[0]}
-                <br />
-                {about.rules[1]}
-                <span aria-hidden="true">~ ✦ ~</span>
-              </p>
             </div>
             <Spark className={cn("deco", styles.factsSpark)} />
           </div>
         </div>
+
+        <h2 className={cn("script layer", styles.rules)}>
+          <span className={styles.ornament} aria-hidden="true">
+            ~ ✦ ~
+          </span>
+          <span>{about.rules[0]}</span>
+          <span className={styles.rulesLine2}>{about.rules[1]}</span>
+          <span className={styles.ornament} aria-hidden="true">
+            ~ ✦ ~
+          </span>
+        </h2>
 
         <div className={styles.duo}>
           <div>
