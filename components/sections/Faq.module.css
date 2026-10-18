@@ -1,0 +1,109 @@
+.grid {
+  display: grid;
+  gap: 32px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 400;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  font-size: clamp(24px, 1.6vw + 18px, 40px);
+}
+
+.row + .row {
+  margin-top: 10px;
+}
+
+.item {
+  padding: 20px 0;
+  border-bottom: 2px solid rgb(51 48 43 / 0.35);
+}
+
+.item summary {
+  display: grid;
+  grid-template-columns: 1fr 44px;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+.item summary::-webkit-details-marker {
+  display: none;
+}
+
+.q {
+  font-size: clamp(18px, 0.5vw + 16px, 22px);
+  font-weight: 700;
+}
+
+.plus {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--guava);
+  color: var(--hib-d);
+  font-size: 26px;
+  font-weight: 500;
+  transition: transform 0.25s;
+}
+
+.item[open] .plus {
+  transform: rotate(45deg);
+}
+
+.item summary:hover .plus {
+  background: var(--hib);
+  color: var(--cream);
+}
+
+.a {
+  display: grid;
+  gap: 10px;
+  padding-top: 12px;
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--ink-s);
+}
+
+/* Плавне розкриття там, де браузер це підтримує */
+.item::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 0.3s ease,
+    content-visibility 0.3s allow-discrete;
+}
+
+.item[open]::details-content {
+  block-size: auto;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: start;
+  }
+
+  .title {
+    position: sticky;
+    top: 56px;
+    text-align: left;
+  }
+
+  .row {
+    justify-content: flex-start;
+  }
+
+  .item:first-child {
+    padding-top: 0;
+  }
+}

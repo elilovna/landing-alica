@@ -1,0 +1,49 @@
+.spots {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.spark {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  color: var(--mango);
+}
+
+.spots strong {
+  display: block;
+  font-size: clamp(15px, 0.6vw + 13px, 17px);
+  font-weight: 800;
+  font-style: italic;
+  color: var(--hib);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.spots span {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.spots[data-tone="dark"] strong {
+  color: var(--guava);
+}
+
+.spots[data-tone="dark"] span {
+  color: var(--cream);
+}
+
+@media (min-width: 1024px) {
+  .spots[data-align="start"] {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .spots[data-align="start"] .spark:last-child {
+    display: none;
+  }
+}

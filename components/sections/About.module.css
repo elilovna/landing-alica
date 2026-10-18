@@ -1,0 +1,431 @@
+.cover {
+  object-fit: cover;
+}
+
+/* ── Інтро + факти ── */
+.intro {
+  display: grid;
+  grid-template-areas:
+    "text"
+    "photo"
+    "facts";
+}
+
+.text {
+  grid-area: text;
+}
+
+.photo {
+  grid-area: photo;
+}
+
+.facts {
+  grid-area: facts;
+}
+
+.hi {
+  font-size: clamp(15px, 0.4vw + 14px, 19px);
+  font-weight: 700;
+  color: var(--ink-s);
+}
+
+.name {
+  margin-top: 6px;
+  font-size: clamp(46px, 3.4vw + 34px, 84px);
+  line-height: 1.15;
+}
+
+.name span {
+  display: block;
+}
+
+.name span + span {
+  margin-left: 0.6em;
+}
+
+.bio {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  font-size: var(--fs-lead);
+  color: var(--ink-s);
+}
+
+.bio li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+}
+
+.bioIcon {
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+  color: var(--mango);
+}
+
+.photo {
+  position: relative;
+  width: min(78%, 420px);
+  margin: 48px auto 0;
+}
+
+.photoFrame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border: 6px solid var(--cream);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 12px 12px 0 var(--palm);
+  transform: rotate(-2deg);
+}
+
+.photoHib {
+  left: -28px;
+  bottom: 36px;
+  width: 64px;
+  height: 64px;
+  color: var(--hib);
+}
+
+.photoSpark {
+  right: -18px;
+  top: -14px;
+  width: 34px;
+  height: 34px;
+  color: var(--mango);
+}
+
+.facts {
+  position: relative;
+  margin-top: 64px;
+  padding: 14px;
+  border-radius: 22px;
+  background: var(--hib);
+  color: var(--cream);
+}
+
+.factsTitle {
+  position: absolute;
+  right: 18px;
+  top: -22px;
+  z-index: 2;
+  font-size: clamp(20px, 0.8vw + 17px, 26px);
+}
+
+.factsInner {
+  border: 1.5px solid rgb(250 246 240 / 0.7);
+  outline: 1.5px solid rgb(250 246 240 / 0.35);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.fact {
+  border-bottom: 1.5px solid rgb(250 246 240 / 0.6);
+}
+
+.factLabel {
+  padding: 18px 16px 0;
+}
+
+.label {
+  display: inline-block;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-serif), serif;
+  font-size: 15px;
+  padding: 3px 9px;
+}
+
+.fact p {
+  padding: 10px 16px 18px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.facts b {
+  color: var(--cream);
+}
+
+.rules {
+  text-align: center;
+  padding: 18px 0 14px;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(26px, 1.2vw + 22px, 38px);
+  line-height: 1.15;
+}
+
+.rules span {
+  display: block;
+  font-size: 18px;
+  color: var(--mango);
+}
+
+.factsSpark {
+  left: -10px;
+  bottom: -16px;
+  width: 34px;
+  height: 34px;
+  color: var(--mango);
+}
+
+/* ── Психологи + хейтери ── */
+.duo {
+  margin-top: clamp(64px, 8vw, 120px);
+  display: grid;
+  gap: 48px;
+}
+
+.quoteHead {
+  font-size: clamp(32px, 2vw + 24px, 52px);
+}
+
+.quote {
+  position: relative;
+  margin-top: 28px;
+  min-height: 180px;
+}
+
+.marks {
+  font-family: var(--font-serif), serif;
+  font-size: 90px;
+  line-height: 0.6;
+  color: var(--hib);
+  text-shadow: 4px 3px 0 var(--guava);
+}
+
+.quote p {
+  position: relative;
+  z-index: 2;
+  max-width: calc(100% - 165px);
+  margin-top: 4px;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink-s);
+}
+
+.sun {
+  position: absolute;
+  right: -6px;
+  top: 0;
+  width: 160px;
+  height: 160px;
+}
+
+.sunBg,
+.sunPhoto {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0%, 59.1% 10%, 71.7% 5%, 75.6% 17.9%, 89.1% 18.8%, 86.9% 32.2%, 98.7% 38.9%, 91% 50%, 98.7% 61.1%, 86.9% 67.8%, 89.1% 81.2%, 75.6% 82.1%, 71.7% 95%, 59.1% 90%, 50% 100%, 40.9% 90%, 28.3% 95%, 24.4% 82.1%, 10.9% 81.2%, 13.1% 67.8%, 1.3% 61.1%, 9% 50%, 1.3% 38.9%, 13.1% 32.2%, 10.9% 18.8%, 24.4% 17.9%, 28.3% 5%, 40.9% 10%);
+}
+
+.sunBg {
+  background: var(--mango);
+  transform: translate(8px, 8px);
+}
+
+.haters::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.ring {
+  position: relative;
+  float: left;
+  width: 150px;
+  aspect-ratio: 1;
+  margin: 0 10px 4px -8px;
+  shape-outside: circle(50%);
+}
+
+.ring::before {
+  content: "";
+  position: absolute;
+  inset: 12.7%;
+  border-radius: 50%;
+  background: var(--hib);
+}
+
+.ringPhoto {
+  position: absolute;
+  inset: 14.7%;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.ring svg {
+  position: absolute;
+  inset: 0;
+}
+
+.ringText {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 800;
+  fill: var(--ink);
+}
+
+.haters p {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--ink-s);
+}
+
+/* ── "Я поділюсь цим з тобою" ── */
+.share {
+  position: relative;
+  max-width: 780px;
+  margin: clamp(64px, 8vw, 120px) auto 0;
+  text-align: center;
+}
+
+.shareSpark {
+  left: -6px;
+  top: -20px;
+  width: 30px;
+  height: 30px;
+  color: var(--mango);
+}
+
+.shareHib {
+  right: 0;
+  top: 76px;
+  width: 46px;
+  height: 46px;
+  color: var(--guava);
+}
+
+.shareLead {
+  max-width: 26em;
+  margin: 0 auto 22px;
+  font-size: var(--fs-lead);
+  font-weight: 700;
+}
+
+.stickers {
+  display: block;
+}
+
+.stickerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  font-size: clamp(30px, 2vw + 24px, 48px);
+}
+
+.stickerRow + .stickerRow {
+  margin-top: 10px;
+  padding-left: 40px;
+}
+
+.shareText {
+  margin-top: 28px;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--ink-s);
+}
+
+@media (min-width: 640px) {
+  .sun {
+    width: 190px;
+    height: 190px;
+  }
+
+  .quote {
+    min-height: 210px;
+  }
+
+  .fact {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+  }
+
+  .factLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px;
+    border-right: 1.5px solid rgb(250 246 240 / 0.6);
+  }
+
+  .fact p {
+    padding: 18px 20px;
+    font-size: 16px;
+  }
+
+  .quote p {
+    max-width: calc(100% - 210px);
+  }
+}
+
+@media (min-width: 768px) {
+  .haters {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .haters::after {
+    content: none;
+  }
+
+  .ring {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .haters p {
+    font-size: var(--fs-lead);
+  }
+}
+
+@media (min-width: 1024px) {
+  .intro {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-areas:
+      "photo text"
+      "photo facts";
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(56px, 7vw, 110px);
+    align-items: start;
+  }
+
+  .photo {
+    position: sticky;
+    top: 56px;
+    width: 100%;
+    margin: 12px 0 0;
+  }
+
+  .facts {
+    margin-top: 64px;
+  }
+
+  .duo {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(48px, 6vw, 96px);
+    align-items: start;
+  }
+
+  .quote {
+    min-height: 260px;
+  }
+
+  .sun {
+    width: 250px;
+    height: 250px;
+  }
+
+  .quote p {
+    max-width: calc(100% - 240px);
+  }
+
+  .haters {
+    margin-top: 40px;
+    grid-template-columns: 200px 1fr;
+  }
+}

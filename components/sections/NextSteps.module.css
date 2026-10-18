@@ -1,0 +1,128 @@
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* Композиція масштабується разом із шириною блоку (одиниці cqi) */
+.head {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  aspect-ratio: 392 / 310;
+  container-type: inline-size;
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  top: -3cqi;
+  z-index: 1;
+  font-size: 30.6cqi;
+  line-height: 1.1;
+}
+
+.stk1,
+.stk2 {
+  position: absolute;
+  z-index: 3;
+  font-size: 7.1cqi;
+}
+
+.stk1 {
+  left: 4.6cqi;
+  top: 45.4cqi;
+}
+
+.stk2 {
+  left: 15.3cqi;
+  top: 59.2cqi;
+}
+
+.polaroid {
+  position: absolute;
+  right: 2cqi;
+  top: 20cqi;
+  z-index: 2;
+  width: 43.4cqi;
+  padding: 2cqi 2cqi 7cqi;
+  background: #fff;
+  box-shadow: 8px 8px 0 var(--hib);
+  transform: rotate(4deg);
+}
+
+.polaroid > div {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.polaroidImg {
+  object-fit: cover;
+  object-position: 62% 22%;
+}
+
+.flipflop {
+  left: 0.5cqi;
+  top: 60.2cqi;
+  width: 6.6cqi;
+  height: 13.3cqi;
+  transform: rotate(-20deg);
+}
+
+.spark {
+  right: 0;
+  top: 14cqi;
+  z-index: 3;
+  width: 7.6cqi;
+  height: 7.6cqi;
+  color: var(--mango);
+}
+
+.steps {
+  display: grid;
+  gap: 28px;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 12px;
+}
+
+.steps li > span {
+  align-self: start;
+  text-align: center;
+}
+
+.steps h3 {
+  font-size: clamp(17px, 0.4vw + 16px, 21px);
+  font-weight: 800;
+}
+
+.steps p {
+  margin-top: 2px;
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--ink-s);
+}
+
+.steps mark {
+  font-weight: 800;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: center;
+  }
+
+  .head {
+    margin-inline: 0;
+  }
+
+  .steps {
+    gap: 36px;
+  }
+}

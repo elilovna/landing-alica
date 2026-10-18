@@ -1,0 +1,196 @@
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+  background: var(--palm);
+  overflow: clip;
+}
+
+.frond {
+  left: -40px;
+  bottom: 40px;
+  width: 140px;
+  height: 230px;
+  color: var(--palm-d);
+  opacity: 0.6;
+  transform: rotate(25deg);
+}
+
+.spark {
+  right: 16px;
+  top: 20px;
+  width: 26px;
+  height: 26px;
+  color: var(--mango);
+}
+
+.bubble {
+  position: relative;
+  background: var(--cream);
+  border-radius: 30px;
+  padding: 30px 22px;
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  left: 46px;
+  bottom: -22px;
+  border-top: 24px solid var(--cream);
+  border-right: 30px solid transparent;
+}
+
+.head {
+  position: relative;
+  min-height: 170px;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  --fs: clamp(38px, 4vw + 24px, 76px);
+  max-width: 5.4em;
+  font-size: var(--fs);
+  line-height: 1.12;
+  transform: rotate(-5deg);
+  transform-origin: left;
+}
+
+.tag {
+  position: absolute;
+  left: calc(var(--fs) * 1.75);
+  top: calc(var(--fs) * 3.05);
+  z-index: 3;
+  white-space: nowrap;
+  font-size: clamp(15px, calc(var(--fs) * 0.28), 20px);
+  transform: rotate(-1deg);
+}
+
+.oval {
+  position: absolute;
+  right: -8px;
+  top: -6px;
+  width: 104px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 var(--hib);
+}
+
+.ovalImg {
+  object-fit: cover;
+}
+
+.hib {
+  right: 96px;
+  top: -18px;
+  width: 44px;
+  height: 44px;
+  color: var(--guava);
+}
+
+.list {
+  margin-top: 18px;
+  display: grid;
+  gap: 22px;
+}
+
+.list li {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 12px;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink-s);
+}
+
+.bullet {
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  color: var(--hib);
+}
+
+.cta {
+  margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+  .bubble {
+    padding: 48px;
+    border-radius: 40px;
+  }
+
+  .bubble::after {
+    left: 80px;
+  }
+
+  .head {
+    min-height: 220px;
+  }
+
+  .oval {
+    right: 0;
+    width: 150px;
+    height: 200px;
+  }
+
+  .hib {
+    right: 150px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .list {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .frond {
+    left: 2%;
+    width: 200px;
+    height: 330px;
+  }
+
+  .spark {
+    right: 6%;
+    top: 40px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .bubble {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(40px, 5vw, 80px);
+    padding: clamp(48px, 5vw, 72px);
+    border-radius: 48px;
+  }
+
+  .head {
+    min-height: 460px;
+  }
+
+  .oval {
+    top: auto;
+    bottom: 0;
+    right: 8px;
+    width: 240px;
+    height: 320px;
+    box-shadow: 12px 12px 0 var(--hib);
+  }
+
+  .hib {
+    right: 210px;
+    top: auto;
+    bottom: 250px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .list {
+    margin-top: 0;
+    gap: 26px;
+  }
+}

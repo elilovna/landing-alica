@@ -1,0 +1,121 @@
+.grid {
+  display: grid;
+  gap: 64px;
+}
+
+.title {
+  font-size: clamp(30px, 2.4vw + 22px, 54px);
+}
+
+.checks {
+  margin-top: 30px;
+  display: grid;
+  gap: 18px;
+}
+
+.checks li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink-s);
+}
+
+.check {
+  width: 28px;
+  height: 28px;
+  color: var(--palm);
+}
+
+.answer {
+  position: relative;
+  background: var(--guava-s);
+  border: 2px dashed var(--hib);
+  border-radius: 26px;
+  padding: 54px 22px 26px;
+}
+
+.stamp {
+  position: absolute;
+  left: 14px;
+  top: -34px;
+  font-size: clamp(40px, 2vw + 34px, 58px);
+  white-space: nowrap;
+  transform: rotate(-7deg);
+}
+
+.stampTag {
+  font-size: 17px;
+  vertical-align: middle;
+  transform: rotate(5deg) translateY(-4px);
+}
+
+.hib {
+  right: -14px;
+  top: -26px;
+  width: 64px;
+  height: 64px;
+  color: var(--hib);
+}
+
+.answers {
+  display: grid;
+  gap: 14px;
+}
+
+.answers li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--ink-s);
+}
+
+.spark {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: var(--hib);
+}
+
+.cta {
+  margin-top: 36px;
+}
+
+@media (min-width: 768px) {
+  .checks {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 36px;
+    row-gap: 24px;
+  }
+
+  .answer {
+    padding: 68px 40px 36px;
+  }
+
+  .stamp {
+    left: 28px;
+    top: -40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: start;
+  }
+
+  .checks {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .aside {
+    position: sticky;
+    top: 56px;
+    padding-top: 48px;
+  }
+}
