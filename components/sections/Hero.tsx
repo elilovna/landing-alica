@@ -55,9 +55,11 @@ export function Hero() {
             <h2 className={styles.format}>
               <Rich text={hero.format} mark="hl-bg" />
             </h2>
-            <p className={styles.lead}>
-              <Rich text={hero.lead} />
-            </p>
+            {hero.lead.map((paragraph) => (
+              <p key={paragraph} className={styles.lead}>
+                <Rich text={paragraph} />
+              </p>
+            ))}
             <p className={styles.deadline}>
               <Spark className={styles.deadlineIcon} />
               {price.earlyBird}

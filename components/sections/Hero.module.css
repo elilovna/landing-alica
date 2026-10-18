@@ -158,6 +158,10 @@
   color: var(--ink-s);
 }
 
+.lead + .lead {
+  margin-top: 14px;
+}
+
 .deadline {
   display: flex;
   align-items: center;
