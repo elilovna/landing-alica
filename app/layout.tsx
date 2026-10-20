@@ -22,7 +22,7 @@ const serif = Yeseva_One({
 
 const title = "Їж. Готуй. Не нервуй — онлайн-практикум Аліси Немиткіної";
 const description =
-  "Інтенсив для тих, хто задовбався вічно прибирати на кухні. 2 дні практики + 5 днів підтримки. Старт 26.10.";
+  "Практикум для тих, хто задовбався вічно прибирати на кухні. 2 дні практики + 5 днів підтримки. Старт 26.10.";
 
 export const metadata: Metadata = {
   // On Netlify, URL is the site's primary address (set automatically at build time).

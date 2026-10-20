@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import { About } from "@/components/sections/About";
 import { Benefits } from "@/components/sections/Benefits";
 import { Faq } from "@/components/sections/Faq";
@@ -9,25 +10,24 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { NextSteps } from "@/components/sections/NextSteps";
 import { Results } from "@/components/sections/Results";
 import { Reviews } from "@/components/sections/Reviews";
-import { StickyBar } from "@/components/StickyBar";
 
 export default function Home() {
   return (
     <>
+      <Header />
       <main>
         <Hero />
         <Benefits />
+        <Results />
         <ForWhom />
         <About />
         <HowItWorks />
-        <Results />
         <Reviews />
         <Faq />
         <NextSteps />
         <FinalCta />
       </main>
       <Footer />
-      <StickyBar />
     </>
   );
 }

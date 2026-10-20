@@ -1,0 +1,322 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+/* Фон окремим шаром: backdrop-filter на самому header зламав би position: fixed у панелі */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(236 226 213 / 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1.5px dashed transparent;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.header[data-scrolled="true"]::before {
+  border-bottom-color: rgb(51 48 43 / 0.16);
+  box-shadow: 0 6px 24px rgb(51 48 43 / 0.08);
+}
+
+.header[data-open="true"]::before {
+  background: var(--sand);
+  box-shadow: none;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: var(--header-h);
+}
+
+/* ── Логотип ── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.brandScript {
+  margin: 1px 0 0 0.9em;
+  color: var(--hib);
+  font-size: 1.15em;
+  transform: rotate(-4deg);
+  transform-origin: left;
+}
+
+/* ── Посилання (широкий екран) ── */
+.nav {
+  display: none;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav a {
+  display: block;
+  padding: 7px 12px 8px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--ink-s);
+  transition:
+    color 0.15s,
+    background-color 0.15s;
+}
+
+.nav a:hover {
+  color: var(--hib);
+}
+
+.nav a[aria-current="true"] {
+  background: var(--guava-s);
+  color: var(--hib-d);
+}
+
+/* ── Ціна, оплата, бургер ── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.price {
+  display: none;
+  white-space: nowrap;
+}
+
+.price strong {
+  font-family: var(--font-serif), serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.price s {
+  font-size: 13px;
+  color: var(--ink-s);
+}
+
+.cta {
+  flex: none;
+  padding: 8px 18px 11px;
+  border-radius: 999px;
+  background: var(--hib);
+  box-shadow: 0 3px 0 var(--hib-d);
+  color: var(--cream);
+  font-family: var(--font-script), cursive;
+  font-size: 17px;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 var(--hib-d);
+}
+
+.cta:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--hib-d);
+}
+
+.toggle {
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.header[data-open="true"] .toggle {
+  background: var(--palm);
+  color: var(--cream);
+}
+
+.header[data-open="true"] .toggle span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.header[data-open="true"] .toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.header[data-open="true"] .toggle span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ── Панель меню (вузький екран) ── */
+.panel {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: max(32px, env(safe-area-inset-bottom));
+  background: var(--sand);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;
+}
+
+.header[data-open="true"] .panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.panelList li {
+  border-bottom: 1.5px dashed rgb(51 48 43 / 0.18);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.header[data-open="true"] .panelList li {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(var(--i) * 35ms + 60ms);
+}
+
+.panelList a {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 15px 2px 14px;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(24px, 6.5vw, 32px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  transition: color 0.15s;
+}
+
+.panelList a:hover,
+.panelList a[aria-current="true"] {
+  color: var(--hib);
+}
+
+.num {
+  flex: none;
+  width: 2.2em;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--hib);
+}
+
+.panelFoot {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.panelPrice strong {
+  font-family: var(--font-serif), serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.panelPrice s {
+  margin-left: 6px;
+  font-size: 16px;
+  color: var(--ink-s);
+}
+
+.panelCta {
+  margin-top: 14px;
+}
+
+@media (min-width: 768px) {
+  .brand {
+    font-size: 17px;
+  }
+
+  .panelList {
+    columns: 2;
+    column-gap: 48px;
+  }
+
+  .panelList li {
+    break-inside: avoid;
+  }
+}
+
+@media (min-width: 1100px) {
+  .nav {
+    display: block;
+    margin-inline: auto;
+  }
+
+  .actions {
+    margin-left: 0;
+  }
+
+  .toggle,
+  .panel {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .price {
+    display: block;
+  }
+
+  .actions {
+    gap: 14px;
+  }
+}

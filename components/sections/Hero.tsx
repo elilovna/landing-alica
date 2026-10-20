@@ -64,7 +64,7 @@ export function Hero() {
               <Spark className={styles.deadlineIcon} />
               {price.earlyBird}
             </p>
-            <CtaButton id="hero-cta" className={styles.cta}>
+            <CtaButton className={styles.cta}>
               {hero.cta}
             </CtaButton>
             <Spots align="start" />

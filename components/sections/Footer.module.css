@@ -1,5 +1,5 @@
 .footer {
-  padding: clamp(24px, 3vw, 40px) 0 120px;
+  padding: clamp(24px, 3vw, 40px) 0 72px;
   background: var(--palm-d);
   color: rgb(250 246 240 / 0.75);
   font-size: 15px;
