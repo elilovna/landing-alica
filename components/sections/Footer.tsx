@@ -2,6 +2,7 @@ import Link from "next/link";
 import { legalDocs, seller } from "@/content/legal";
 import { footer, site } from "@/content/landing";
 import { cn } from "@/lib/cn";
+import { CookieSettingsButton } from "../ui/CookieSettingsButton";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -55,6 +56,9 @@ export function Footer() {
                   <Link href={`/${doc.slug}`}>{doc.label}</Link>
                 </li>
               ))}
+              <li>
+                <CookieSettingsButton />
+              </li>
             </ul>
           </nav>
           <p className={styles.copy}>

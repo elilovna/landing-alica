@@ -45,13 +45,24 @@
 }
 
 .contacts a,
-.legal a {
+.legal a,
+.legal button {
   text-decoration: none;
   transition: color 0.15s;
 }
 
+.legal button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
 .contacts a:hover,
-.legal a:hover {
+.legal a:hover,
+.legal button:hover {
   color: var(--cream);
   text-decoration: underline;
   text-underline-offset: 3px;

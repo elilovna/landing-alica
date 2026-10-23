@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Pacifico, Yeseva_One } from "next/font/google";
+import { CookieBanner } from "@/components/CookieBanner";
 import { ErrorToast } from "@/components/ErrorToast";
+import { MetaPixel } from "@/components/MetaPixel";
 import "./globals.css";
 
 const sans = Manrope({
@@ -54,6 +56,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         {children}
         <ErrorToast />
+        <CookieBanner />
+        <MetaPixel />
       </body>
     </html>
   );

@@ -1,0 +1,78 @@
+/* Банер відкривається як popover (верхній шар), тож перекриваємо стандартні стилі popover */
+.banner {
+  position: fixed;
+  inset: auto 12px max(12px, env(safe-area-inset-bottom));
+  z-index: 70; /* для старих браузерів без popover */
+  width: auto;
+  max-width: 420px;
+  height: auto;
+  margin: 0;
+  padding: 18px 18px 16px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 10px 30px rgb(51 48 43 / 0.25);
+  overflow: visible;
+  animation: banner-in 0.3s ease;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.text {
+  margin-top: 6px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-s);
+}
+
+.text a {
+  color: var(--hib-d);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--palm);
+  color: var(--cream);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.button:hover {
+  background: var(--palm-d);
+}
+
+@media (min-width: 768px) {
+  .banner {
+    right: auto;
+    left: 20px;
+    bottom: 20px;
+    width: 400px;
+  }
+}
+
+@keyframes banner-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
