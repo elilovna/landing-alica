@@ -192,16 +192,8 @@
   top: 70px;
 }
 
-.deadline {
-  margin-top: 28px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--hib-d);
-}
-
 .cta {
-  margin-top: 16px;
+  margin-top: 28px;
 }
 
 @media (min-width: 768px) {

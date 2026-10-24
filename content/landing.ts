@@ -26,12 +26,8 @@ export const site = {
 };
 
 export const price = {
-  now: 725,
-  was: 1815,
+  amount: 1815,
   currency: "грн",
-  discount: "-60%",
-  earlyBird: "знижка для early birds діє до 23.10 включно",
-  deadline: "знижка діє до 23.10 включно",
 };
 
 export const spots = {

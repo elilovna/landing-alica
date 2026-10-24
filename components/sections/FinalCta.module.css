@@ -65,16 +65,8 @@
 
 .priceRow {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  justify-content: center;
   margin-top: 30px;
-}
-
-.deadline {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--guava);
 }
 
 .cta {
@@ -122,8 +114,7 @@
   }
 
   .priceRow {
-    flex-direction: row;
-    gap: 24px;
+    justify-content: flex-start;
   }
 
   .cta {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import howImg from "@/assets/images/how.jpg";
 import resultImg from "@/assets/images/result.jpg";
-import { how, price } from "@/content/landing";
+import { how } from "@/content/landing";
 import { cn } from "@/lib/cn";
 import { CtaButton } from "../ui/CtaButton";
 import { Arrow, Spark } from "../ui/Icons";
@@ -82,9 +82,8 @@ export function HowItWorks() {
             <Rich text={how.offer} />
           </h3>
           <Arrow className={styles.arrow} />
-          <PriceBadge id="ring-offer" className={styles.badge} />
+          <PriceBadge className={styles.badge} />
         </div>
-        <p className={styles.deadline}>{price.deadline}</p>
         <CtaButton className={styles.cta}>{how.cta}</CtaButton>
       </div>
     </section>

@@ -162,29 +162,8 @@
   margin-top: 14px;
 }
 
-.deadline {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  margin: 30px auto 0;
-  padding: 7px 16px 8px 12px;
-  border-radius: 999px;
-  background: var(--cream);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--hib-d);
-}
-
-.deadlineIcon {
-  width: 16px;
-  height: 16px;
-  flex: none;
-  color: var(--mango);
-}
-
 .cta {
-  margin-top: 18px;
+  margin-top: 30px;
 }
 
 @media (min-width: 768px) {
@@ -252,10 +231,6 @@
 
   .format {
     margin-top: 44px;
-  }
-
-  .deadline {
-    margin-inline: 0;
   }
 
   .cta {

@@ -110,11 +110,6 @@
   font-weight: 400;
 }
 
-.price s {
-  font-size: 13px;
-  color: var(--ink-s);
-}
-
 .cta {
   flex: none;
   padding: 8px 18px 11px;
@@ -268,12 +263,6 @@
   font-family: var(--font-serif), serif;
   font-size: 34px;
   font-weight: 400;
-}
-
-.panelPrice s {
-  margin-left: 6px;
-  font-size: 16px;
-  color: var(--ink-s);
 }
 
 .panelCta {

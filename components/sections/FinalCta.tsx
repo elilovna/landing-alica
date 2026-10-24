@@ -1,6 +1,6 @@
 import Image from "next/image";
 import finalImg from "@/assets/images/final.jpg";
-import { finalCta, price } from "@/content/landing";
+import { finalCta } from "@/content/landing";
 import { cn } from "@/lib/cn";
 import { CtaButton } from "../ui/CtaButton";
 import { Frond } from "../ui/Icons";
@@ -37,8 +37,7 @@ export function FinalCta() {
               <Rich text={finalCta.text} />
             </p>
             <div className={styles.priceRow}>
-              <PriceBadge id="ring-final" tone="cream" />
-              <p className={styles.deadline}>{price.deadline}</p>
+              <PriceBadge tone="cream" />
             </div>
             <CtaButton id="final-cta" variant="cream" className={styles.cta}>
               {finalCta.cta}

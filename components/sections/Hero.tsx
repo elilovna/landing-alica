@@ -1,6 +1,6 @@
 import Image from "next/image";
 import heroImg from "@/assets/images/hero.jpg";
-import { hero, price } from "@/content/landing";
+import { hero } from "@/content/landing";
 import { cn } from "@/lib/cn";
 import { CtaButton } from "../ui/CtaButton";
 import { Frond, Hibiscus, Spark } from "../ui/Icons";
@@ -47,7 +47,7 @@ export function Hero() {
               <Hibiscus className={cn("deco", styles.hib)} />
               <Spark className={cn("deco", styles.spark1)} />
               <Spark className={cn("deco", styles.spark2)} />
-              <PriceBadge id="ring-hero" className={styles.badge} />
+              <PriceBadge className={styles.badge} />
             </div>
           </div>
 
@@ -60,10 +60,6 @@ export function Hero() {
                 <Rich text={paragraph} />
               </p>
             ))}
-            <p className={styles.deadline}>
-              <Spark className={styles.deadlineIcon} />
-              {price.earlyBird}
-            </p>
             <CtaButton className={styles.cta}>
               {hero.cta}
             </CtaButton>

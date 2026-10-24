@@ -81,9 +81,8 @@ export function Header() {
         <div className={styles.actions}>
           <p className={styles.price}>
             <strong>
-              {price.now} {price.currency}
-            </strong>{" "}
-            <s>{price.was}</s>
+              {price.amount} {price.currency}
+            </strong>
           </p>
           <CheckoutLink className={styles.cta}>{nav.cta}</CheckoutLink>
           <button
@@ -123,11 +122,8 @@ export function Header() {
           <div className={styles.panelFoot}>
             <p className={styles.panelPrice}>
               <strong>
-                {price.now} {price.currency}
-              </strong>{" "}
-              <s>
-                {price.was} {price.currency}
-              </s>
+                {price.amount} {price.currency}
+              </strong>
             </p>
             <CtaButton className={styles.panelCta}>{nav.menuCta}</CtaButton>
             <Spots />
